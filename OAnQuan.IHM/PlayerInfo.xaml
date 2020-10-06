@@ -1,0 +1,34 @@
+﻿<Window x:Class="OAnQuan.IHM.PlayerInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OAnQuan.IHM"
+        mc:Ignorable="d"
+        Title="Administration" Height="481.765" Width="920">
+
+    <DockPanel>
+        <DataGrid x:Name="dgrListPlayer" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Classement" Width="70" Binding="{Binding Ranking}" />
+                <DataGridTextColumn Header="Pseudo" Width="150" Binding="{Binding Pseudo}" />
+                <DataGridTextColumn Header="Nom complet" Width="200" Binding="{Binding FullName}" />
+                <DataGridTextColumn Header="Active" Width="70" Binding="{Binding IsEnabledString}" />
+                <DataGridTextColumn Header="Admin" Width="70" Binding="{Binding IsAdminString}" />
+                <DataGridTextColumn Header="Victoires" Width="70" Binding="{Binding WinGameQty}" />
+                <DataGridTextColumn Header="Nuls" Width="70" Binding="{Binding DrawGameQty}" />
+                <DataGridTextColumn Header="Echecs" Width="70" Binding="{Binding LoseGameQty}" />
+                <DataGridTextColumn Header="Joués" Width="70" Binding="{Binding TotalGameQty}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Width="60" x:Name="btnModify" Content="Editer" Click="btnModify_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
